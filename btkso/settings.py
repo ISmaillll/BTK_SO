@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'btksoapp.apps.BtksoappConfig',
+    'btksofront.apps.BtksofrontConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ SIMPLE_JWT = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'medFrontend/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'btksofront/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -96,7 +97,9 @@ TEMPLATES = [
     },
 ]
 
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'btksofront/static'),
+]
 WSGI_APPLICATION = 'btkso.wsgi.application'
 
 
